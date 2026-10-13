@@ -15,7 +15,7 @@ body{
 }
 
 .wrapper {
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     background-color: #191c32;
     color: #fff;
@@ -75,7 +75,7 @@ body{
     background-color: #191c32;
     color: #fff;
     margin: 0 auto;
-    width:  100vw;
+    width: 100%;
     height: 80vh;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -132,7 +132,7 @@ span{
 /* sobre mi */
 
 .about{
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     background-color: #191c32;
     color: #fff;
@@ -141,7 +141,7 @@ span{
 .about {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    width: 100vw;
+    width: 100%;
     align-items: center;
 }
 
@@ -183,7 +183,7 @@ span{
 /* skills */
 
 .mh-skills{
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     background-color: #191c32;
     color: #fff;
@@ -204,7 +204,7 @@ span{
 /* hobbies */
 
 .hobbies {
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     background-color: #191c32;
     color: #fff;
@@ -223,18 +223,25 @@ span{
 }
 
 .productos{
-width: 940px;
+/* Tenia width:940px fijo, que en un movil se salia de la pantalla y dejaba
+   la mitad de los iconos fuera de la vista. Como rejilla se reacomoda sola. */
+width: 100%;
+max-width: 940px;
 margin: 0 auto;
-padding: 50px;
+padding: 50px 1em;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 1.2em;
+list-style: none;
+box-sizing: border-box;
 }
 
 .productos li{
-display: inline-block;
+display: block;
 text-align: center;
-width: 30%;
-vertical-align: top;
-margin: 10px 1.5%;
-padding: 30px 20px;
+width: auto;
+margin: 0;
+padding: 25px 15px;
 box-sizing: border-box;
 border: 2px solid #000000;
 border-radius: 10px;
@@ -253,7 +260,7 @@ border-color:aqua;
 /* formacion */
 
 .formacion {
-    width: 100vw;
+    width: 100%;
     height: 80vh;
     background-color: #191c32;
     color: #fff;
@@ -271,14 +278,15 @@ border-color:aqua;
 /* proyectos */
 
 .proyectos {
-    width: 100vw;
-    height: 50vw;
+    width: 100%;
+    /* Sin alto fijo: la seccion crece con el numero de tarjetas. */
     background-color: #191c32;
     color: #fff;
+    padding-bottom: 4em;
 }
 
 .proyectos-headings {
-    width: 100vw;
+    width: 100%;
     padding: 1em;
 }
 
@@ -286,92 +294,156 @@ border-color:aqua;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
     font-size: 3em;
-    
+}
+
+.proyectos-intro {
+    max-width: 60ch;
+    margin-top: 0.8em;
+    line-height: 1.6;
+    opacity: 0.85;
 }
 
 .proyectos .container {
-    width: 80vw;
-    height: 80vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    width: min(1200px, 90vw);
+    height: auto;
+    margin: 2em auto 0;
+    display: grid;
+    /* Las tarjetas se reacomodan solas: 3 por fila en escritorio,
+       2 en tablet y 1 en movil, sin necesidad de media queries. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
 }
 
 .card {
-    width: 800px;
+    width: auto;
+    height: auto;
     color: #fff;
-    height: 450px;
     background-color: #101e4b;
-    margin: 0.5em;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
 .card_img {
-    width: 495px;
-    height: 300px;
-    background-image: url(images/encriptador\ preview.png);
-    background-size: cover;
-}
-
-.card_img_2 {
-    width: 495px;
-    height: 300px;
-    background-image: url(images/Hangman\ Preview.png);
-    background-size: cover;
-}
-
-.card_title {
-    padding: 20px;
-}
-
-.card_title h2 {
-    font-size: 2.5em;
-}
-
-.card_projects-links {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card_projects-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.card_projects-links i {
-    font-size: 1.5em;
-}
-
-.card .project-details {
-    margin: 0 auto;
-    margin: 1em;
-    width: 40%;
-}
-
-.card .project-details a{
-    text-decoration: none;
-    color: #191c32;
-    text-transform: uppercase;
-}
-
-.project-details-content {
-    display: flex;
     width: 100%;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    /* Fondo por defecto para los proyectos que aun no tienen captura. */
+    background-color: #0b1538;
+    display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+/* Marcador de posicion: muestra las iniciales del proyecto en grande
+   mientras no haya imagen. Si la tarjeta trae background-image, la
+   imagen tapa este fondo y el texto queda detras. */
+.card_img[data-inicial]::after {
+    content: attr(data-inicial);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2.6em;
+    letter-spacing: 0.05em;
+    color: aqua;
+    opacity: 0.55;
+}
+
+.card_img--encriptador {
+    background-image: url('images/encriptador preview.png');
+}
+
+.card_img--hangman {
+    background-image: url('images/Hangman Preview.png');
+}
+
+.card_body {
+    padding: 1.2em;
+    flex: 1;
+}
+
+.card_body h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.card_body p {
+    line-height: 1.55;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
     margin-top: 1em;
+    list-style: none;
+    padding: 0;
+}
+
+.stack li {
+    font-size: 0.78em;
+    padding: 0.25em 0.7em;
+    border: 1px solid rgba(0, 255, 255, 0.45);
+    border-radius: 999px;
+    color: aqua;
+}
+
+.card_links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2em;
+    padding: 0 1.2em 1.2em;
+    align-items: center;
+}
+
+.card_links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-bottom: 1px solid transparent;
+}
+
+.card_links a:hover,
+.card_links a:focus-visible {
+    color: aqua;
+    border-bottom-color: aqua;
+}
+
+.card_links i {
+    font-size: 1em;
+}
+
+/* Para los proyectos cuyo repositorio es privado. */
+.card_nota {
+    font-size: 0.85em;
+    opacity: 0.6;
+    font-style: italic;
 }
 
 
 /* contacto */
 
 .contact-section {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #191c32;
     color: #fff;
 }
 
 .contacto-headings {
-    width: 100vw;
+    width: 100%;
     padding: 1em; 
 }
 
@@ -437,11 +509,141 @@ border-color:aqua;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100px;
     background-color: aqua;
 }
 
 .footer-content h2{
     font-size: 2.5em;
+}
+
+/* ------------------------------------------------------------------
+   Responsive
+   El sitio se diseno solo para escritorio: rejillas de 2 y 10 columnas
+   fijas, imagenes de 300-400px y alturas en vh. En un movil eso desborda
+   por los lados. Aqui se corrige sin tocar el diseno de escritorio.
+   ------------------------------------------------------------------ */
+
+/* 100vw incluye el ancho de la barra de scroll, asi que cualquier seccion
+   con width:100vw provoca scroll horizontal. Esto lo evita en todo el sitio. */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    /* La barra tenia overflow:hidden y recortaba los enlaces. */
+    .navbar {
+        position: static;
+        flex-wrap: wrap;
+        gap: 0.8em;
+        overflow: visible;
+        padding: 1em;
+    }
+
+    .menu {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.2em;
+    }
+
+    .menu a {
+        padding: 8px 12px;
+        font-size: 0.95em;
+    }
+
+    .wrapper {
+        height: auto;
+    }
+
+    /* Hero: una sola columna, con la foto debajo del texto. */
+    .main {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 2em 1.2em 3em;
+        gap: 1.5em;
+    }
+
+    .main img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        justify-self: center;
+    }
+
+    .info-content h1,
+    .p {
+        /* Se adapta al ancho disponible en vez de desbordar. */
+        font-size: clamp(1.8em, 9vw, 3em);
+        overflow-wrap: break-word;
+    }
+
+    /* Sobre mi: la rejilla de 10 columnas pasa a una sola. */
+    .about {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 2em 0;
+    }
+
+    .about img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        padding: 1em;
+        margin: 0 auto;
+    }
+
+    .about-info {
+        grid-column: 1 / -1;
+        padding: 1em 1.2em;
+    }
+
+    /* Titulos de seccion: 3em se come la pantalla en un movil. */
+    .about-info h2,
+    .proyectos-headings h2,
+    .contacto-headings h2,
+    .hobbies-headings h2 {
+        font-size: clamp(1.9em, 8vw, 3em);
+    }
+
+    /* Las secciones restantes tenian alto fijo en vh o vw. */
+    .mh-skills,
+    .hobbies,
+    .formacion,
+    .contact-section {
+        height: auto;
+        padding-bottom: 2.5em;
+    }
+
+    .proyectos-headings,
+    .contacto-headings {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .proyectos .container {
+        width: 92vw;
+        gap: 1.1em;
+    }
+
+    .card_body {
+        padding: 1em;
+    }
+}
+
+/* La barra de navegacion es fixed, asi que al saltar con los enlaces del
+   menu el titulo de la seccion quedaba oculto debajo. */
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
