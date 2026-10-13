@@ -1,649 +1,639 @@
-*{
+/* =========================================================
+   Portafolio de Henry Monsanto
+   ========================================================= */
+
+:root {
+    --fondo:        #0B0F1A;
+    --fondo-alt:    #0E1424;
+    --superficie:   #141C2F;
+    --superficie-2: #1B2540;
+    --borde:        #22304F;
+
+    --texto:        #E8EDF9;
+    --texto-suave:  #9AA8C2;
+
+    --acento:       #22D3EE;
+    --acento-2:     #818CF8;
+    --vivo:         #34D399;
+
+    --display: 'Sora', system-ui, sans-serif;
+    --cuerpo:  'Inter', system-ui, -apple-system, sans-serif;
+
+    --ancho: 1150px;
+    --radio: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body, h1, h2, h3, p, ul, ol, dl, dd, figure {
     margin: 0;
-    padding: 1.5em;
-    box-sizing: border-box;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-/* header-menu */
-body{
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-}
-
-.wrapper {
-    width: 100%;
-    height: 10vh;
-    background-color: #191c32;
-    color: #fff;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5em;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
- 
-}
-
-.brand {
-    margin-top: -7;
-    display: flex;
-    justify-content: space-between;
-}
-
-.brand span{
-    color: aqua;
-}
-
-
-.menu{
-    display: flex;
-    width: 60%;
-    justify-content: space-around;
-
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: all .5s ease;
-
-}
-
-.menu a:hover {
-    background-color: aqua;
-    color: #191c32;
-    transition: ease-in 0.4s;
-}
-
-.menu li {
-    list-style: none;
-
-}
-
-/* main */
-
-.main {
-    background-color: #191c32;
-    color: #fff;
-    margin: 0 auto;
-    width: 100%;
-    height: 80vh;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-}
-
-.info-content h1,
-.p {
-    font-size: 3em;
-    font-family: 'Poppins', sans-serif
-}
-
-span{
-    color: aqua;
-}
-
-.download-cv {
-    padding: 10px 20px;
-    background-color: aqua;
-    border: none;
-    border-radius: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    box-shadow: 1px 3px 11px -5px rgba(102,231,200,.69);
-}
-
-.download-cv:hover {
-    background-color: white;
-    box-shadow: none;
-}
-
-.main img {
-    width: 300px;
-    height: 300px;
-    opacity: 0.3;
-}
-
-.info-content ul{
-    display: flex;
-    width: 70%;
-    justify-content: space-around;
-}
-
-.info-content ul{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    box-shadow: 1px 3px 11px -5px rgba(102,231,200,.69);
-}
-
-
-/* sobre mi */
-
-.about{
-    width: 100%;
-    height: 90vh;
-    background-color: #191c32;
-    color: #fff;
-}
-
-.about {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    width: 100%;
-    align-items: center;
-}
-
-.about img{
-    padding: 2em;
-    width: 400px;
-    height: 400px;
-}
-
-.about-info {
-    grid-column: 2/10;
-    padding: 1em;
-}
-
-.about-info h2 {
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 3em;
-}
-
-.about-info h3{
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif 
-}
-
-.divider {
-    height: 4px;
-    width: 60px;
-    background-color: aqua;
-    margin-top: 10px;
-    margin-bottom: 2em;
-    padding-right: 10/px;
-}
-
-.about p {
-    margin-bottom: 1em;
-}
-
-/* skills */
-
-.mh-skills{
-    width: 100%;
-    height: 90vh;
-    background-color: #191c32;
-    color: #fff;
-    padding: 1em;
-}
-
-.mh-professional-skill{
-    padding: 10px
-}
-
-.mh-skills .mh-professional-skill h2{
-    font-size: 3em;
-    line-height: 50px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;;
-}
-
-/* hobbies */
-
-.hobbies {
-    width: 100%;
-    height: 90vh;
-    background-color: #191c32;
-    color: #fff;
-}
-
-.hobbies-headings h2 {
-    font-size: 3em;
-    line-height: 50px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    padding: 10px;
-}
-
-.skills-icon{
-    font-size: 2.5em;
-}
-
-.productos{
-/* Tenia width:940px fijo, que en un movil se salia de la pantalla y dejaba
-   la mitad de los iconos fuera de la vista. Como rejilla se reacomoda sola. */
-width: 100%;
-max-width: 940px;
-margin: 0 auto;
-padding: 50px 1em;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 1.2em;
-list-style: none;
-box-sizing: border-box;
-}
-
-.productos li{
-display: block;
-text-align: center;
-width: auto;
-margin: 0;
-padding: 25px 15px;
-box-sizing: border-box;
-border: 2px solid #000000;
-border-radius: 10px;
-}
-
-.productos li:hover{
-border-color:aqua;
-}
-
-.productos h2{
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 3em;
-}
-
-/* formacion */
-
-.formacion {
-    width: 100%;
-    height: 80vh;
-    background-color: #191c32;
-    color: #fff;
-}
-
-.formacion-headings h2{
-    font-size: 3em;
-    line-height: 50px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    padding: 10px;
-}
-
-
-/* proyectos */
-
-.proyectos {
-    width: 100%;
-    /* Sin alto fijo: la seccion crece con el numero de tarjetas. */
-    background-color: #191c32;
-    color: #fff;
-    padding-bottom: 4em;
-}
-
-.proyectos-headings {
-    width: 100%;
-    padding: 1em;
-}
-
-.proyectos-headings h2 {
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 3em;
-}
-
-.proyectos-intro {
-    max-width: 60ch;
-    margin-top: 0.8em;
-    line-height: 1.6;
-    opacity: 0.85;
-}
-
-.proyectos .container {
-    width: min(1200px, 90vw);
-    height: auto;
-    margin: 2em auto 0;
-    display: grid;
-    /* Las tarjetas se reacomodan solas: 3 por fila en escritorio,
-       2 en tablet y 1 en movil, sin necesidad de media queries. */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5em;
-}
-
-.card {
-    width: auto;
-    height: auto;
-    color: #fff;
-    background-color: #101e4b;
-    margin: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-}
-
-.card_img {
-    width: 100%;
-    height: 170px;
-    background-size: cover;
-    background-position: center;
-    /* Fondo por defecto para los proyectos que aun no tienen captura. */
-    background-color: #0b1538;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Marcador de posicion: muestra las iniciales del proyecto en grande
-   mientras no haya imagen. Si la tarjeta trae background-image, la
-   imagen tapa este fondo y el texto queda detras. */
-.card_img[data-inicial]::after {
-    content: attr(data-inicial);
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 2.6em;
-    letter-spacing: 0.05em;
-    color: aqua;
-    opacity: 0.55;
-}
-
-.card_img--encriptador {
-    background-image: url('images/encriptador preview.png');
-}
-
-.card_img--hangman {
-    background-image: url('images/Hangman Preview.png');
-}
-
-.card_body {
-    padding: 1.2em;
-    flex: 1;
-}
-
-.card_body h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.35em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-.card_body p {
-    line-height: 1.55;
-    font-size: 0.95em;
-    opacity: 0.9;
-}
-
-.stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4em;
-    margin-top: 1em;
-    list-style: none;
     padding: 0;
 }
 
-.stack li {
-    font-size: 0.78em;
-    padding: 0.25em 0.7em;
-    border: 1px solid rgba(0, 255, 255, 0.45);
-    border-radius: 999px;
-    color: aqua;
-}
-
-.card_links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2em;
-    padding: 0 1.2em 1.2em;
-    align-items: center;
-}
-
-.card_links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9em;
-    border-bottom: 1px solid transparent;
-}
-
-.card_links a:hover,
-.card_links a:focus-visible {
-    color: aqua;
-    border-bottom-color: aqua;
-}
-
-.card_links i {
-    font-size: 1em;
-}
-
-/* Para los proyectos cuyo repositorio es privado. */
-.card_nota {
-    font-size: 0.85em;
-    opacity: 0.6;
-    font-style: italic;
-}
-
-
-/* contacto */
-
-.contact-section {
-    width: 100%;
-    height: 100vh;
-    background-color: #191c32;
-    color: #fff;
-}
-
-.contacto-headings {
-    width: 100%;
-    padding: 1em; 
-}
-
-.contacto-headings h2 {
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 3em;
-}
-
-.container-contact {
-    padding: 0;
-    margin: 0 auto;
-    float: left;
-}
-
-.forms {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    padding: 20px;
-    position: absolute;
-    right: 0;
-    text-align: left;   
-}
-
-.forms input {
-    padding: 10px 20px;
-    margin-bottom: 1em;
-    background: none;
-    border: none;
-    border-bottom: 1px solid white;
-    color: white;
-}
-
-.forms textarea {
-    height: 150px;
-    background: none;
-    color: white;
-    padding: 1.5em;
-    border: 1px solid white;
-}
-
-.btn-submit {
-    padding: 10px 20px;
-    margin: 1em;
-    border: none;
-    text-transform: uppercase;
-    background-color: aqua;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 1px 3px 11px -5px rgba(102,231,200,0.69);
-}
-
-.btn-submit:hover {
-    background-color: white;
-    box-shadow: none;
-}
-
-/* footer */
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background-color: aqua;
-}
-
-.footer-content h2{
-    font-size: 2.5em;
-}
-
-/* ------------------------------------------------------------------
-   Responsive
-   El sitio se diseno solo para escritorio: rejillas de 2 y 10 columnas
-   fijas, imagenes de 300-400px y alturas en vh. En un movil eso desborda
-   por los lados. Aqui se corrige sin tocar el diseno de escritorio.
-   ------------------------------------------------------------------ */
-
-/* 100vw incluye el ancho de la barra de scroll, asi que cualquier seccion
-   con width:100vw provoca scroll horizontal. Esto lo evita en todo el sitio. */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-}
-
-@media (max-width: 900px) {
-    /* La barra tenia overflow:hidden y recortaba los enlaces. */
-    .navbar {
-        position: static;
-        flex-wrap: wrap;
-        gap: 0.8em;
-        overflow: visible;
-        padding: 1em;
-    }
-
-    .menu {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 0.2em;
-    }
-
-    .menu a {
-        padding: 8px 12px;
-        font-size: 0.95em;
-    }
-
-    .wrapper {
-        height: auto;
-    }
-
-    /* Hero: una sola columna, con la foto debajo del texto. */
-    .main {
-        grid-template-columns: 1fr;
-        height: auto;
-        padding: 2em 1.2em 3em;
-        gap: 1.5em;
-    }
-
-    .main img {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-        justify-self: center;
-    }
-
-    .info-content h1,
-    .p {
-        /* Se adapta al ancho disponible en vez de desbordar. */
-        font-size: clamp(1.8em, 9vw, 3em);
-        overflow-wrap: break-word;
-    }
-
-    /* Sobre mi: la rejilla de 10 columnas pasa a una sola. */
-    .about {
-        grid-template-columns: 1fr;
-        height: auto;
-        padding: 2em 0;
-    }
-
-    .about img {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
-        padding: 1em;
-        margin: 0 auto;
-    }
-
-    .about-info {
-        grid-column: 1 / -1;
-        padding: 1em 1.2em;
-    }
-
-    /* Titulos de seccion: 3em se come la pantalla en un movil. */
-    .about-info h2,
-    .proyectos-headings h2,
-    .contacto-headings h2,
-    .hobbies-headings h2 {
-        font-size: clamp(1.9em, 8vw, 3em);
-    }
-
-    /* Las secciones restantes tenian alto fijo en vh o vw. */
-    .mh-skills,
-    .hobbies,
-    .formacion,
-    .contact-section {
-        height: auto;
-        padding-bottom: 2.5em;
-    }
-
-    .proyectos-headings,
-    .contacto-headings {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .proyectos .container {
-        width: 92vw;
-        gap: 1.1em;
-    }
-
-    .card_body {
-        padding: 1em;
-    }
-}
-
-/* La barra de navegacion es fixed, asi que al saltar con los enlaces del
-   menu el titulo de la seccion quedaba oculto debajo. */
-section[id] {
-    scroll-margin-top: 90px;
-}
+ul, ol { list-style: none; }
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--cuerpo);
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.65;
+    overflow-x: hidden;
+    /* Dos halos de color muy suaves, fijos, que dan profundidad al fondo
+       plano sin estorbar la lectura. */
+    background-image:
+        radial-gradient(60rem 40rem at 78% -10%, rgba(34, 211, 238, 0.10), transparent 60%),
+        radial-gradient(50rem 40rem at 5% 10%, rgba(129, 140, 248, 0.10), transparent 55%);
+    background-attachment: fixed;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+::selection { background: var(--acento); color: #06202B; }
+
+:focus-visible {
+    outline: 2px solid var(--acento);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Enlace para saltar el menu con el teclado. */
+.saltar {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--acento);
+    color: #06202B;
+    padding: 0.7em 1.2em;
+    z-index: 100;
+    font-weight: 600;
+}
+.saltar:focus { left: 0; }
+
+/* ---------- Navegacion ---------- */
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11, 15, 26, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borde);
+}
+
+.nav__inner {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.marca {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+.marca span { color: var(--acento); }
+
+.nav__links {
+    display: flex;
+    gap: 1.6rem;
+    margin-left: auto;
+}
+
+.nav__links a {
+    text-decoration: none;
+    color: var(--texto-suave);
+    font-size: 0.93rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav__links a:hover { color: var(--texto); }
+
+.nav__social {
+    display: flex;
+    gap: 0.9rem;
+    color: var(--texto-suave);
+}
+.nav__social a { transition: color 0.2s; display: flex; }
+.nav__social a:hover { color: var(--acento); }
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 6px;
+}
+.nav__toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--texto);
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.2s;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 5.5rem 1.5rem 4.5rem;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.hero__saludo {
+    color: var(--acento);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+
+.grad {
+    background: linear-gradient(100deg, var(--acento), var(--acento-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero__sub {
+    color: var(--texto-suave);
+    font-size: 1.07rem;
+    max-width: 52ch;
+    margin-bottom: 2rem;
+}
+
+.hero__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-bottom: 2.8rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.2s, border-color 0.2s;
+}
+
+.btn--primario {
+    background: linear-gradient(100deg, var(--acento), var(--acento-2));
+    color: #06202B;
+}
+.btn--primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(34, 211, 238, 0.28);
+}
+
+.btn--fantasma {
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    background: rgba(255, 255, 255, 0.02);
+}
+.btn--fantasma:hover {
+    border-color: var(--acento);
+    color: var(--acento);
+    transform: translateY(-2px);
+}
+
+.hero__datos {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+.hero__datos li { display: flex; flex-direction: column; }
+.hero__datos strong {
+    font-family: var(--display);
+    font-size: 1.7rem;
+    line-height: 1.1;
+}
+.hero__datos span {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+
+.hero__foto picture { display: block; }
+
+.hero__foto img {
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid var(--borde);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Estructura de secciones ---------- */
+
+.seccion {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+    /* El menu es sticky: sin esto el titulo queda debajo al saltar. */
+    scroll-margin-top: 80px;
+}
+
+.seccion--alt {
+    max-width: none;
+    background: var(--fondo-alt);
+    border-block: 1px solid var(--borde);
+}
+.seccion--alt > * { max-width: var(--ancho); margin-inline: auto; }
+
+.seccion__cabecera { margin-bottom: 3rem; }
+
+.seccion__eyebrow {
+    color: var(--acento);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.seccion h2 {
+    font-family: var(--display);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.seccion__intro {
+    color: var(--texto-suave);
+    max-width: 58ch;
+    margin-top: 0.9rem;
+}
+
+/* ---------- Proyectos ---------- */
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.6rem;
+}
+
+.proyecto {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+    border-color: rgba(34, 211, 238, 0.45);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* La primera tarjeta ocupa el doble de ancho donde quepa. */
+.proyecto--destacado { grid-column: span 2; }
+
+.proyecto__media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--superficie-2);
+    border-bottom: 1px solid var(--borde);
+}
+
+.proyecto__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+}
+.proyecto:hover .proyecto__media img { transform: scale(1.03); }
+
+/* Para los proyectos sin captura disponible. */
+.proyecto__media--vacia {
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(28rem 18rem at 50% 0%, rgba(129, 140, 248, 0.22), transparent 70%),
+        var(--superficie-2);
+    color: var(--acento);
+}
+.proyecto__media--vacia svg { width: 62px; height: 62px; opacity: 0.85; }
+
+.proyecto__cuerpo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex: 1;
+}
+
+.proyecto__etiquetas { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.chip {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.25em 0.75em;
+    border-radius: 999px;
+    border: 1px solid var(--borde);
+    color: var(--texto-suave);
+}
+
+.chip--vivo {
+    color: var(--vivo);
+    border-color: rgba(52, 211, 153, 0.45);
+    background: rgba(52, 211, 153, 0.08);
+}
+
+.proyecto h3 {
+    font-family: var(--display);
+    font-size: 1.22rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.proyecto p {
+    color: var(--texto-suave);
+    font-size: 0.94rem;
+}
+
+.stack-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.stack-mini li {
+    font-size: 0.75rem;
+    padding: 0.22em 0.7em;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.22);
+    color: var(--acento);
+}
+
+.proyecto__enlaces { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+.enlace {
+    text-decoration: none;
+    color: var(--acento);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    gap: 0.4em;
+    align-items: center;
+}
+.enlace span { transition: transform 0.2s; }
+.enlace:hover span { transform: translateX(4px); }
+.enlace--suave { color: var(--texto-suave); }
+.enlace--suave:hover { color: var(--texto); }
+
+.proyecto__nota {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    opacity: 0.75;
+    font-style: italic;
+}
+
+/* ---------- Stack ---------- */
+
+.stack-grupos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+}
+
+.stack-grupo {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 1.5rem;
+}
+
+.stack-grupo h3 {
+    font-family: var(--display);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--acento);
+}
+
+.stack-grupo ul { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.stack-grupo li {
+    font-size: 0.86rem;
+    padding: 0.3em 0.8em;
+    border-radius: 8px;
+    background: var(--superficie-2);
+    border: 1px solid var(--borde);
+}
+
+/* ---------- Sobre mi ---------- */
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.sobre__texto p {
+    color: var(--texto-suave);
+    margin-bottom: 1.1rem;
+    max-width: 62ch;
+}
+
+.sobre__tarjeta {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 1.6rem;
+}
+
+.sobre__tarjeta h3 {
+    font-family: var(--display);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: var(--acento);
+}
+
+.sobre__tarjeta dl { display: flex; flex-direction: column; gap: 1rem; }
+.sobre__tarjeta dt {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--texto-suave);
+}
+.sobre__tarjeta dd { font-weight: 500; }
+
+/* ---------- Formacion ---------- */
+
+.linea {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border-left: 2px solid var(--borde);
+    padding-left: 1.8rem;
+    margin-left: 0.4rem;
+}
+
+.linea li { position: relative; }
+
+.linea li::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.8rem - 7px);
+    top: 0.55rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--acento);
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+}
+
+.linea__ano {
+    font-size: 0.82rem;
+    color: var(--acento);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.linea h3 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    margin: 0.2rem 0 0.3rem;
+}
+
+.linea p { color: var(--texto-suave); font-size: 0.95rem; }
+
+/* ---------- Contacto ---------- */
+
+.contacto {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    background-image: radial-gradient(40rem 20rem at 50% 0%, rgba(34, 211, 238, 0.10), transparent 70%);
+}
+
+.contacto h2 {
+    font-family: var(--display);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 0.8rem;
+}
+
+.contacto p {
+    color: var(--texto-suave);
+    max-width: 46ch;
+    margin: 0 auto 2rem;
+}
+
+.contacto__acciones {
+    display: flex;
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------- Pie ---------- */
+
+.pie {
+    border-top: 1px solid var(--borde);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.88rem;
+}
+
+/* ---------- Adaptacion a pantallas pequenas ---------- */
+
+@media (max-width: 950px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3.5rem;
+        gap: 2.5rem;
+    }
+    /* La foto va primero en movil: presenta antes de contar. */
+    .hero__foto { order: -1; max-width: 320px; }
+    .sobre { grid-template-columns: 1fr; }
+    .proyecto--destacado { grid-column: span 1; }
+}
+
+@media (max-width: 760px) {
+    .nav__toggle { display: flex; }
+
+    .nav__links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--fondo-alt);
+        border-bottom: 1px solid var(--borde);
+        /* Plegado hasta que se pulsa el boton. Se anima con max-height y no
+           con grid-template-rows, porque ese truco necesita un unico hijo
+           envolvente y aqui los enlaces son hermanos directos. */
+        display: flex;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .nav.abierto .nav__links { max-height: 22rem; }
+
+    .nav__links a {
+        padding: 0.9rem 1.5rem;
+        border-bottom: 1px solid var(--borde);
+        display: block;
+    }
+
+    .nav__social { margin-left: auto; }
+
+    .seccion { padding: 3.5rem 1.2rem; }
+    .seccion__cabecera { margin-bottom: 2rem; }
+    .hero { padding: 2.5rem 1.2rem 3rem; }
+    .hero__datos { gap: 1.6rem; }
+    .contacto { padding: 2.5rem 1.2rem; }
+    .rejilla { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
