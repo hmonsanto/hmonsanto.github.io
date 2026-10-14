@@ -817,3 +817,32 @@ a { color: inherit; }
     }
     .revelar { opacity: 1; transform: none; }
 }
+
+/* Certificaciones, bajo la trayectoria */
+.certificaciones {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--borde);
+}
+
+.certificaciones h3 {
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.certificaciones ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.certificaciones li {
+    font-size: 0.85rem;
+    padding: 0.35em 0.85em;
+    border-radius: 8px;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    color: var(--texto-suave);
+}
